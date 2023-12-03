@@ -33,6 +33,13 @@ class Dog {
     return this.age >=3;
   }
   /**
+   * 개의 나이를 반환하는 getter
+   * @returns {number} 새로 설정된 개의 나이
+   */
+  get age () {
+    return this._age;
+  }
+  /**
    * 개의 나이를 설정하는 setter
    * @param {number} newAge - 새로 설정할 개의 나이
    */
@@ -59,10 +66,10 @@ myDog.bark(); // 멍멍!
 // 개의 성인 여부를 확인
 console.log(myDog.isAdult); // true
 
-// 개의 나이를 변경
+// setter를 통한 나이 변경 (유효한 경우)
 myDog.age = 5;
-console.log(myDog); // Dog { name: '멍멍이', _age: 5 }
+console.log(myDog.age); // 5
 
-// 음수로 나이 변경을 시도하고 예외 처리 확인
-myDog.age = -3;
-console.log(myDog.age); //? undefined
+// setter를 통한 나이 변경 (유효하지 않은 경우)
+myDog.age = -3; // 나이는 음수일 수 없다.
+console.log(myDog.age); // 5 (이전에 유효했던 값이 유지됨)
