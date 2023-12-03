@@ -64,5 +64,5 @@ my_dog.age = 5
 print(my_dog.age) # 5
 
 # setter를 통한 나이 변경 (유효하지 않은 경우)
-my_dog.age = -3
+my_dog.age = -3 # 나이는 음수일 수 없다.
 print(my_dog.age) # 5 (이전에 유효했던 값이 유지됨)
