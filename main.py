@@ -10,8 +10,8 @@ class Dog:
         :param age: 개의 나이
         :type age: int
         """
-        self.name = name
-        self.age = age
+        self._name = name
+        self._age = age
 
     def bark(self):
         """
@@ -19,23 +19,29 @@ class Dog:
         """
         print('멍멍!')
 
+    @property
+    def age(self):
+        """
+        개의 나이를 반환하는 getter
+        """
+        return self._age
+
     def is_adult(self):
         """
         개의 성인 여부를 확인하는 메서드
         Returns:
             bool: 개가 성인인 경우 True, 그렇지 않으면 False
         """
-        return self.age >= 3
+        return self._age >= 3
 
 # Dog 클래스를 호출하여 새로운 인스턴스(my_dog)를 생성하고 초기화
 my_dog = Dog('멍멍이', 3)
 
 # my_dog 인스턴스에 접근해 개의 이름을 출력
-print(my_dog.name)  # 멍멍이
+print(my_dog._name)  # 멍멍이
 
-# 개가 짖는 소리 출력
-my_dog.bark()  # 멍멍!
+# age 속성에 접근해 나이 출력
+print(my_dog.age)  # 3
 
 # 개의 성인 여부를 확인
-print(my_dog.age) # 3
-print(my_dog.is_adult()) # True
+print(my_dog.is_adult())  # True
