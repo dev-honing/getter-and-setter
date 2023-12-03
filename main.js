@@ -19,3 +19,8 @@ class Dog {
     this.age = age;
   }
 }
+
+// Dog 생성자 함수를 호출하여 새로운 객체를 생성하고 초기화
+const myDog = new Dog("멍멍이", 3);
+// 새로운 객체 myDog를 출력
+console.log(myDog); // Dog { name: '멍멍이', age: 3 }
