@@ -19,10 +19,10 @@ class Dog:
         """
         print('멍멍!')
 
-# Dog 클래스를 호출하여 새로운 객체(my_dog)를 생성하고 초기화
+# Dog 클래스를 호출하여 새로운 인스턴스(my_dog)를 생성하고 초기화
 my_dog = Dog('멍멍이', 3)
 
-# 새로운 객체 my_dog를 출력
+# my_dog 인스턴스에 접근해 개의 이름을 출력
 print(my_dog.name)  # 멍멍이
 
 # 개가 짖는 소리 출력
