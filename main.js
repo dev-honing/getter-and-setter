@@ -16,7 +16,7 @@ class Dog {
    */
   constructor(name, age) {
     this.name = name;
-    this.age = age;
+    this._age = age; // _age는 나이를 저장하는 private 변수
   }
   /**
    * 개가 짖는 소리를 출력하는 메서드
@@ -32,15 +32,30 @@ class Dog {
   get isAdult() {
     return this.age >=3;
   }
+  /**
+   * 개의 나이를 설정하는 setter
+   * @param {number} newAge - 새로 설정할 개의 나이
+   */
+  set age(newAge) {
+    if (newAge >= 0) {
+      this._age = newAge;
+    } else {
+      console.log('나이는 음수일 수 없다.');
+    }
+  }
 }
 
 // Dog 생성자 함수를 호출하여 새로운 객체를 생성하고 초기화
 const myDog = new Dog('멍멍이', 3);
 // 새로운 객체 myDog를 출력
-console.log(myDog); // Dog { name: '멍멍이', age: 3 }
+console.log(myDog); // Dog { name: '멍멍이', _age: 3 }
 
 // 개가 짖는 소리 출력
 myDog.bark(); // 멍멍!
 
 // 개의 성인 여부를 확인
 console.log(myDog.isAdult); // true
+
+// 개의 나이를 변경
+myDog.age = 5;
+console.log(myDog); // Dog { name: '멍멍이', _age: 5 }
