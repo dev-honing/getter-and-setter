@@ -43,6 +43,9 @@ class Dog {
       console.log('나이는 음수일 수 없다.');
     }
   }
+  /**
+   * getter 
+   */
 }
 
 // Dog 생성자 함수를 호출하여 새로운 객체를 생성하고 초기화
@@ -59,3 +62,7 @@ console.log(myDog.isAdult); // true
 // 개의 나이를 변경
 myDog.age = 5;
 console.log(myDog); // Dog { name: '멍멍이', _age: 5 }
+
+// 음수로 나이 변경을 시도하고 예외 처리 확인
+myDog.age = -3;
+console.log(myDog.age); //? undefined
