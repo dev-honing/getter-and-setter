@@ -43,6 +43,7 @@ class Dog:
         """
         개의 성인 여부를 확인하는 메서드
         Returns:
+        
             bool: 개가 성인인 경우 True, 그렇지 않으면 False
         """
         return self._age >= 3
