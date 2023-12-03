@@ -25,6 +25,19 @@ class Dog:
         개의 나이를 반환하는 getter
         """
         return self._age
+    
+    @age.setter
+    def age(self, new_age):
+        """
+        개의 나이를 설정하는 setter
+
+        :param new_age: 새로 설정할 개의 나이
+        :type new_age: int
+        """
+        if new_age >= 0:
+            self._age = new_age
+        else:
+            print('나이는 음수일 수 없다.')
 
     def is_adult(self):
         """
@@ -45,3 +58,11 @@ print(my_dog.age)  # 3
 
 # 개의 성인 여부를 확인
 print(my_dog.is_adult())  # True
+
+# setter를 통한 나이 변경 (유효한 경우)
+my_dog.age = 5
+print(my_dog.age) # 5
+
+# setter를 통한 나이 변경 (유효하지 않은 경우)
+my_dog.age = -3
+print(my_dog.age) # 5 (이전에 유효했던 값이 유지됨)
